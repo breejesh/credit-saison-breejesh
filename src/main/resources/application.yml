@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://dpg-ceepmesgqg4b3h9fa61g-a.singapore-postgres.render.com/credit_saison_breejesh?currentSchema=food_business,public
+    username: breejesh
+    password: 5eOg6nrVY35sosubtMsPqzFDpfNoRCbu
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
