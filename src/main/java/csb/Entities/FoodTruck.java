@@ -1,16 +1,22 @@
 package csb.Entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "food_facility_permit")
 public class FoodTruck {
     @Id
     @SequenceGenerator(name = "id_sequence", sequenceName = "id_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_sequence")
     @Column(name = "locationid")
     private long locationId;
 

@@ -25,18 +25,6 @@ public class FoodTruckDao {
         return foodTruckRepository.findClosestFoodTrucks(longitude, latitude, limit);
     }
 
-    public Page<FoodTruck> findByApplicantContains(String applicantSearch, Pageable page) {
-        return foodTruckRepository.findByApplicantContains(applicantSearch, page);
-    }
-
-    public Page<FoodTruck> findByAddressContains(String addressSearch, Pageable page) {
-        return foodTruckRepository.findByAddressContains(addressSearch, page);
-    }
-
-    public Page<FoodTruck> findByExpirationDateAfter(ZonedDateTime expirationDate, Pageable page) {
-        return foodTruckRepository.findByExpirationDateAfter(expirationDate, page);
-    }
-
     public Page<FoodTruck> findByFilters(String applicantSearch, String addressSearch, ZonedDateTime expirationDate, Pageable page) {
         Specification<FoodTruck> spec =  (root, query, cb) -> {
             List<Predicate> predicates = new ArrayList<>();
@@ -55,7 +43,9 @@ public class FoodTruckDao {
             return cb.and(predicates.toArray(Predicate[]::new));
         };
         return foodTruckRepository.findAll(spec, page);
+    }
 
-
+    public FoodTruck save(FoodTruck foodTruck) {
+        return foodTruckRepository.save(foodTruck);
     }
 }

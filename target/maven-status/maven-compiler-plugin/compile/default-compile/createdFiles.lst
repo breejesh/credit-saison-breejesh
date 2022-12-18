@@ -1,9 +1,0 @@
-csb\Types\Enums\Status.class
-csb\Services\FoodTruckService.class
-csb\Types\Requests\FoodTruckInsertRequest.class
-csb\Controllers\FoodTruckController.class
-csb\Main.class
-csb\Types\Requests\SearchRequest.class
-csb\JPA\FoodTruckRepository.class
-csb\JPA\FoodTruckDao.class
-csb\Entities\FoodTruck.class

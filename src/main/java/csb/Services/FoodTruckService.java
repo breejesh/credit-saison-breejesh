@@ -26,19 +26,12 @@ public class FoodTruckService {
         return foodTruckDao.findClosestFoodTrucks(longitude, latitude, limit);
     }
 
-    public Page<FoodTruck> findByApplicant(String applicantSearch, Pageable page) {
-        return foodTruckDao.findByApplicantContains(applicantSearch, page);
-    }
-
-    public Page<FoodTruck> findByAddress(String addressSearch, Pageable page) {
-        return foodTruckDao.findByAddressContains(addressSearch, page);
-    }
-
-    public Page<FoodTruck> findByExpirationDateAfter(ZonedDateTime expirationDate, Pageable page) {
-        return foodTruckDao.findByExpirationDateAfter(expirationDate, page);
-    }
-
     public Page<FoodTruck> findByFilters(String applicantSearch, String addressSearch, ZonedDateTime expirationDate, Pageable page) {
         return foodTruckDao.findByFilters(applicantSearch, addressSearch, expirationDate, page);
     }
+
+    public FoodTruck save(FoodTruck foodTruck) {
+        return foodTruckDao.save(foodTruck);
+    }
+
 }

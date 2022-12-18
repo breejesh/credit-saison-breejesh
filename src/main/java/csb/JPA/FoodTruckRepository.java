@@ -18,10 +18,4 @@ public interface FoodTruckRepository extends JpaRepository<FoodTruck, Long>, Jpa
     @Query(value = "SELECT * FROM food_facility_permit order by st_distance(st_makepoint(longitude\\:\\:float, latitude\\:\\:float), st_makepoint(:longitude\\:\\:float , :latitude\\:\\:float)) asc limit :limit", nativeQuery = true)
     List<FoodTruck> findClosestFoodTrucks(@Param("longitude") float longitude, @Param("latitude") float latitude, @Param("limit") int limit);
 
-    Page<FoodTruck> findByApplicantContains(String applicantSearch, Pageable page);
-
-    Page<FoodTruck> findByAddressContains(String addressSearch, Pageable page);
-
-    Page<FoodTruck> findByExpirationDateAfter(ZonedDateTime expirationDate, Pageable page);
-
 }
