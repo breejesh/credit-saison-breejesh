@@ -10,6 +10,7 @@ You will build an API that allows the following operations on this data set:
 # APIs
 ## /api/search
 Use this API to search using applicant name, street name and expiration. At least one of those is mandatory and if multiple are provided logical AND condition is applied.<br />
+**URL:** https://credit-saison-breejesh.onrender.com/api/search <br/>
 **Verb:** POST<br />
 **Sample Request Body:**
 ```json
@@ -22,6 +23,23 @@ Use this API to search using applicant name, street name and expiration. At leas
 ```
 ## /api/find-closest
 Use this API to find closest food trucks to a given point (latitude and longitude). You can specify the number of result entries needed, automatically limited to minimum 1 and maximum 10.<br />
-
+**URL:** https://credit-saison-breejesh.onrender.com/api/find-closest </br>
 **Verb:** GET<br />
-**Sample Parameter:** /api/find-closest?longitude=-122.4646&latitude=37.765495&limit=5
+**Sample URL:** https://credit-saison-breejesh.onrender.com/api/find-closest?longitude=-122.4646&latitude=37.765495&limit=5<br/>
+
+## /api/add
+Use this API to add a food truck permit entry. Limited columns were taken since this is just a demo.<br/>
+**URL:** https://credit-saison-breejesh.onrender.com/api/add <br/>
+**Verb:** POST<br/>
+**Sample Request Body:**
+```json
+{
+    "applicantName": "Breejesh",
+    "streetName": "Jane Street",
+    "expirationDate": "2025-12-10T18:25:43.511Z",
+    "approvalDate": "2023-11-10T18:25:43.511Z",
+    "latitude": 41.766759,
+    "longitude":  -72.701173
+}
+```
+
