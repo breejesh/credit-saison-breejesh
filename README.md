@@ -7,6 +7,8 @@ You will build an API that allows the following operations on this data set:
 - Add new food truck entry to the dataset
 - Given a delivery location, find out the closest truck possible.
 
+### Warning: The API and Database is hosted on render (https://render.com/) since that is the only free tier I had, and the API calls will have a cold start if unused so please wait for a while after the first call timesout and then evaluate.<br/>
+
 # APIs
 ## /api/search
 Use this API to search using applicant name, street name and expiration. At least one of those is mandatory and if multiple are provided logical AND condition is applied.<br />
